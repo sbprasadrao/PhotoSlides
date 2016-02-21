@@ -99,12 +99,31 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\NavButtonControl.xaml.cs">
+      <DependentUpon>NavButtonControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\AuthorizationManager.cs" />
     <Compile Include="Data\PhotoFactory.cs" />
     <Compile Include="DomainObjects\Categories.cs" />
     <Compile Include="Framework\BaseViewModel.cs" />
+    <Compile Include="Services\DomainObjects\NavigationGroup.cs" />
+    <Compile Include="Services\GroupNavigationService.cs" />
+    <Compile Include="Services\IGroupNavigationService.cs" />
     <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="ViewModel\Albums\AlbumsViewModel.cs" />
+    <Compile Include="ViewModel\Favorites\FavoritesViewModel.cs" />
+    <Compile Include="ViewModel\GroupViewModel.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
+    <Compile Include="ViewModel\Settings\SettingsViewModel.cs" />
+    <Compile Include="View\Albums\AlbumsView.xaml.cs">
+      <DependentUpon>AlbumsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Favorites\FavoritesView.xaml.cs">
+      <DependentUpon>FavoritesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GroupPage.xaml.cs">
+      <DependentUpon>GroupPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -116,6 +135,10 @@
     <Compile Include="Model\PhotoItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\EnumUtility.cs" />
+    <Compile Include="View\Settings\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Views.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -132,6 +155,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\NavButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Albums\AlbumsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Favorites\FavoritesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GroupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +178,10 @@
     <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Settings\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup />

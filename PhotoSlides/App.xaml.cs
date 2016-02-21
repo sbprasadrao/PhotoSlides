@@ -1,4 +1,7 @@
-﻿using PhotoSlides.View;
+﻿using Microsoft.Practices.ServiceLocation;
+using PhotoSlides.Services;
+using PhotoSlides.Services.DomainObjects;
+using PhotoSlides.View;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -69,6 +72,8 @@ namespace PhotoSlides
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+                var nagivationService = ServiceLocator.Current.GetInstance<IGroupNavigationService>();
+                nagivationService.RegisterGroup(rootFrame, NavigationGroup.A);
             }
 
             if (rootFrame.Content == null)
