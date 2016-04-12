@@ -37,6 +37,7 @@ namespace PhotoSlides
 
             SimpleIoc.Default.Register<LoginPageViewModel>();
             SimpleIoc.Default.Register<MainPageViewModel>();
+            SimpleIoc.Default.Register<AlbumsViewModel>();
         }
 
         private IGroupNavigationService initNavigationService()
@@ -53,5 +54,7 @@ namespace PhotoSlides
 
         public LoginPageViewModel LoginPageViewModel => ServiceLocator.Current.GetInstance<LoginPageViewModel>();
         public MainPageViewModel MainPageViewModel => ServiceLocator.Current.GetInstance<MainPageViewModel>();
+
+        public AlbumsViewModel AlbumsViewModel => ServiceLocator.Current.GetInstance<AlbumsViewModel>();
     }
 }

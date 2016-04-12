@@ -1,20 +1,13 @@
-﻿<Page x:Class="PhotoSlides.View.GroupPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:interactions="using:Microsoft.Xaml.Interactions.Core"
-      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-      xmlns:local="using:PhotoSlides"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      mc:Ignorable="d">
-	<interactivity:Interaction.Behaviors>
-		<interactions:EventTriggerBehavior EventName="Loaded">
-			<interactions:InvokeCommandAction Command="{Binding LoadedCommand}" />
-		</interactions:EventTriggerBehavior>
-		<interactions:EventTriggerBehavior EventName="Unloaded">
-			<interactions:InvokeCommandAction Command="{Binding UnloadedCommand}" />
-		</interactions:EventTriggerBehavior>
-	</interactivity:Interaction.Behaviors>
+﻿<UserControl x:Class="PhotoSlides.Controls.AlbumControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="using:PhotoSlides.Controls"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             mc:Ignorable="d">
+
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="40" />
@@ -26,7 +19,7 @@
 		           Text="{Binding Path=Name}" />
 		<ItemsControl Name="ImageList"
 		              Grid.Row="1"
-		              ItemsSource="{Binding Categories}">
+		              ItemsSource="{Binding Categories,Mode=TwoWay}">
 			<ItemsControl.ItemTemplate>
 				<DataTemplate>
 					<Grid BorderBrush="Beige" BorderThickness="2">
@@ -43,7 +36,7 @@
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>
 		</ItemsControl>
-		<GridView Grid.Row="2" ItemsSource="{Binding Categories}">
+		<GridView Grid.Row="2" ItemsSource="{Binding Categories, Mode=TwoWay}">
 			<GridView.ItemTemplate>
 				<DataTemplate>
 					<StackPanel>
@@ -63,4 +56,4 @@
 			</GridView.ItemTemplate>
 		</GridView>
 	</Grid>
-</Page>
+</UserControl>
